@@ -1,7 +1,7 @@
 
 const CLIENT_ID = '384795757441-1r3ui08t7vib6nrn369qn8d0efm71c31.apps.googleusercontent.com'
 const DISCOVERY_DOCS = ['https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest'];
-const SCOPES = 'https://www.googleapis.com/auth/youtube.readonly';
+const SCOPES = 'https://www.googleapis.com/auth/youtube.readonly  https://www.googleapis.com/auth/youtube.upload';
 
 const authorizeButton = document.getElementById('authorize-button');
 const signoutButton = document.getElementById('signout-button');
