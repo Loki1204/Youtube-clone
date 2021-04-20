@@ -1,59 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
-
-  <style>
-    #content,
-    #authorize-button,
-    #signout-button {
-      display: none
-    }
-  </style>
-
-  <title>YouTube Channel Data</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=
+  , initial-scale=1.0">
+  <title>Document</title>
 </head>
-
 <body>
-  <nav class="black">
-    <div class="nav-wrapper">
-      <div class="container">
-        <a href="#!" class="brand-logo">YouTube Channel Data</a>
-      </div>
-    </div>
-  </nav>
-  <br>
-  <section>
-    <div class="container">
-      <p>Log In With Google</p>
-      <button class="btn red" id="authorize-button">Log In</button>
-      <button class="btn red" id="signout-button">Log Out</button>
-      <br>
-      <div id="content">
-        <div class="row">
-          <div class="col s6">
-            <form id="channel-form">
-              <div class="input-field col s6">
-                <input type="text" placeholder="Enter Channel Name" id="channel-input">
-                <input type="submit" value="Get Channel Data" class="btn grey">
-              </div>
-            </form>
-          </div>
-          <div id="channel-data" class="col s6"></div>
-        </div>
-        <div class="row" id="video-container"></div>
-      </div>
-    </div>
-  </section>
+  <script src="https://apis.google.com/js/api.js"></script>
+<script>
+  /**
+   * Sample JavaScript code for youtube.channels.list
+   * See instructions for running APIs Explorer code samples locally:
+   * https://developers.google.com/explorer-help/guides/code_samples#javascript
+   */
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
-  <script src="main.js"></script>
-  <script async defer src="https://apis.google.com/js/api.js" onload="this.onload=function(){};handleClientLoad()" onreadystatechange="if (this.readyState === 'complete') this.onload()">
-  </script>
+  function authenticate() {
+    return gapi.auth2.getAuthInstance()
+        .signIn({scope: "https://www.googleapis.com/auth/youtube.readonly"})
+        .then(function() { console.log("Sign-in successful"); },
+              function(err) { console.error("Error signing in", err); });
+  }
+  function loadClient() {
+    gapi.client.setApiKey("AIzaSyCMgbcwlUdRdlohbLQKReG0MtDtNu9f7pE");
+    return gapi.client.load("https://www.googleapis.com/discovery/v1/apis/youtube/v3/rest")
+        .then(function() { console.log("GAPI client loaded for API"); },
+              function(err) { console.error("Error loading GAPI client for API", err); });
+  }
+  // Make sure the client is loaded and sign-in is complete before calling this method.
+  function execute() {
+    return gapi.client.youtube.channels.list({
+      "mine": true
+    })
+        .then(function(response) {
+                // Handle the results here (response.result has the parsed body).
+                console.log("Response", response);
+              },
+              function(err) { console.error("Execute error", err); });
+  }
+  gapi.load("client:auth2", function() {
+    gapi.auth2.init({client_id: "384795757441-1r3ui08t7vib6nrn369qn8d0efm71c31.apps.googleusercontent.com"});
+  });
+</script>
+<button onclick="authenticate().then(loadClient)">authorize and load</button>
+<button onclick="execute()">execute</button>
+
 </body>
-
 </html>
+
+
+
+
