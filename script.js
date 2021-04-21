@@ -91,7 +91,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
     function getChannel(channel){
        gapi.client.youtube.channels.list({
         part: 'snippet,contentDetails,statistics',
-      id: channel
+      forUsername: channel
       })
       .then(response => {
         console.log(response);
