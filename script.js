@@ -67,7 +67,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           $('#sign-in-or-out-button').html('Sign In/Authorize');
           $('#revoke-access-button').css('display', 'none');
           videoPlayer.style.display = 'none';
-          videoContainer.style.display = 'none';
+//           videoContainer.style.display = 'none';
           channelData.style.display = 'none';
           channelForm.style.display = 'none';
         }
