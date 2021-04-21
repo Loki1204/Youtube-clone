@@ -25,6 +25,9 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
       $('#sign-in-or-out-button').click(function() {
         handleAuthClick();
       })
+      $('#revoke-access-button').click(function() {
+        revokeAccess();
+      });
       
     });
       
