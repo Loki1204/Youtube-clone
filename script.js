@@ -60,6 +60,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           videoPlayer.style.display = 'block';
           videoContainer.style.display = 'block';
           channelData.style.display = 'block';
+          channelForm.style.display = 'block';
 
 
         } else {
@@ -68,6 +69,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           videoPlayer.style.display = 'none';
           videoContainer.style.display = 'none';
           channelData.style.display = 'none';
+          channelForm.style.display = 'none';
         }
         
       }
