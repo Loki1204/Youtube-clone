@@ -1,0 +1,7 @@
+.youtube-logo{
+    height: 20px;
+}
+
+#login-btn, #logout-btn{
+ display: none;
+}
