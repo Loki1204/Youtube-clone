@@ -1,4 +1,11 @@
-const loginBtn = document.getElementById('sign-in-or-out-button');
+const mainContainer = document.getElementById('main-container');
+const channelInput = document.getElementById('channel-input');
+const channelData = document.getElementById('channel-data');
+const channelForm = document.getElementById('channel-form');
+const videoPlayer = document.getElementById('video-player');
+const videoContainer = document.getElementById('video-container');
+
+
 
 var GoogleAuth;
 var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.channel-memberships.creator https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload';
@@ -50,13 +57,17 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
         if (isAuthorized) {
           $('#sign-in-or-out-button').html('Sign out');
           $('#revoke-access-button').css('display', 'inline-block');
-          $('#auth-status').html('You are currently signed in and have granted ' +
-              'access to this app.');
+          videoPlayer.style.display = 'block';
+          videoContainer.style.display = 'block';
+          channelData.style.display = 'block';
+
+
         } else {
           $('#sign-in-or-out-button').html('Sign In/Authorize');
           $('#revoke-access-button').css('display', 'none');
-          $('#auth-status').html('You have not authorized this app or you are ' +
-              'signed out.');
+          videoPlayer.style.display = 'none';
+          videoContainer.style.display = 'none';
+          channelData.style.display = 'none';
         }
         
       }
@@ -65,3 +76,21 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
         setSigninStatus();
       }
     }
+
+
+    channelForm.addEventListener('submit', ev => {
+      ev.preventDefault();
+      const channel = channelInput.value;
+      getChannel(channel);
+
+    });
+
+
+    function getChannel(){
+      return gapi.client.youtube.channels.list({})
+      .then(function(response) {
+                      console.log("Response", response);
+            },
+            function(err) { console.error("Execute error", err); });
+    }
+
