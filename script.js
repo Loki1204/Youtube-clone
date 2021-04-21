@@ -1,7 +1,7 @@
 const loginBtn = document.getElementById('sign-in-or-out-button');
 
 var GoogleAuth;
-var SCOPE = 'https://www.googleapis.com/auth/youtube.force-ssl';
+var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/auth/youtube.channel-memberships.creator https://www.googleapis.com/auth/youtube.force-ssl https://www.googleapis.com/auth/youtube.upload';
   
   function handleClientLoad() {
     
@@ -25,8 +25,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube.force-ssl';
       $('#sign-in-or-out-button').click(function() {
         handleAuthClick();
       })
-      // loginBtn.onclick = handleAuthClick;
-      // logoutBtn.onclick = handleAuthClick;
+      
     });
       
     
@@ -38,21 +37,21 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube.force-ssl';
         }
       }
 
-      // function revokeAccess() {
-      //   GoogleAuth.disconnect();
-      // }
+      function revokeAccess() {
+        GoogleAuth.disconnect();
+      }
 
       function setSigninStatus() {
         var user = GoogleAuth.currentUser.get();
         var isAuthorized = user.hasGrantedScopes(SCOPE);
         if (isAuthorized) {
           $('#sign-in-or-out-button').html('Sign out');
-          // $('#revoke-access-button').css('display', 'inline-block');
+          $('#revoke-access-button').css('display', 'inline-block');
           $('#auth-status').html('You are currently signed in and have granted ' +
               'access to this app.');
         } else {
           $('#sign-in-or-out-button').html('Sign In/Authorize');
-          // $('#revoke-access-button').css('display', 'none');
+          $('#revoke-access-button').css('display', 'none');
           $('#auth-status').html('You have not authorized this app or you are ' +
               'signed out.');
         }
