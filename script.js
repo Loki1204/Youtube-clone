@@ -105,9 +105,9 @@ function showChannelData(data){
         <ul class="collection">
           <li class="collection-item">Title: ${channel.snippet.title}</li>
           <li class="collection-item">ID: ${channel.id}</li>
-          <li class="collection-item">Subscribers: ${channel.statistics.subscriberCount}</li>
-          <li class="collection-item">Views: ${channel.statistics.viewCount}</li>
-          <li class="collection-item">Videos: ${channel.statistics.videoCount}
+          <li class="collection-item">Subscribers: ${numberWithCommas(channel.statistics.subscriberCount)}</li>
+          <li class="collection-item">Views: ${numberWithCommas(channel.statistics.viewCount)}</li>
+          <li class="collection-item">Videos: ${numberWithCommas(channel.statistics.videoCount)}
           </ul>
           <p>${channel.snippet.description}</p>
           <a class="btn btn-danger" target="-blank" href="https://youtube.com/channel/${channel.id}">Visit Channel</a>
@@ -116,3 +116,7 @@ function showChannelData(data){
       })
       .catch(err => alert('No Channel by that name'))
     }
+
+function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
