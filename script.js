@@ -139,10 +139,10 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
       console.log(response);
 
       const playListItems = response.result.items;
-      if(playlistItems){
+      if(playListItems){
         let output  = '<br><h4 style="text-align: center;">Latest Vidoes</h4>';
 
-        playlistItems.forEach(item =>{
+        playListItems.forEach(item =>{
           const videoId = item.snippet.resourceId.videoId;
 
           output += `
