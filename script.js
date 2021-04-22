@@ -112,7 +112,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           </ul>
           <p>${channel.snippet.description}</p>
           <a class="btn btn-danger" target="-blank" href="https://youtube.com/channel/${channel.id}">Visit Channel</a>
-          <button class="btn btn-danger" onclick = ${subscribe()}>Subscribe</button>`;
+//           <button class="btn btn-danger" onclick = ${subscribe()}>Subscribe</button>`;
           showChannelData(output);
 
           const playlistId = channel.contentDetails.relatedPlaylists.uploads;
