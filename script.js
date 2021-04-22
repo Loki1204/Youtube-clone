@@ -154,7 +154,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
           output += `
           
-                    <article id="vidlist" data-key="${videoId}">
+                    <article data-key="${videoId}">
                   <img src="${thumbnails}" alt="image">  
                     <p>${description}</p>
                     </article>
@@ -163,12 +163,13 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
         })
 
-        let article = document.getElementsByTagName('article')
-        let eventListener = function(){alert('clicked an articles')}
-        for(var i=0; i<article.length; i++){
-          article[i].addEventListener('click', eventListener );
-      }
+         let vidlist = document.getElementsByTagName('article')
+        vidlist.onclick = function(){
+          alert('heloo clicked')
+        }
       
+      
+  
 
         videoContainer.innerHTML =  output;
       }else{
