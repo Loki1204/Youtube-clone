@@ -148,12 +148,14 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
                           <br><h4 style="text-align: center;">Latest Vidoes</h4> `;
 
         playListItems.forEach(item =>{
-          const thumbnails = item.snippet.thumbnails.medium.url;
+          const thumbnails = item.snippet.thumbnails.default.url;
+          const description = item.snippet.description.substring(0, 100);
           const videoId = item.snippet.resourceId.videoId;
 
           output += `
           <div class="col-12">
                   <img src="${thumbnails}" alt="image">  
+                    <p>${description}
           </div>
          `;
 
