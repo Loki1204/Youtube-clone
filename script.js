@@ -87,6 +87,10 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
     });
 
+function showChannelData(data){
+      const channelData = document.getElementById('channel-data');
+      channelData.innerHTML = data;
+    }
 
     function getChannel(channel){
        gapi.client.youtube.channels.list({
@@ -95,6 +99,20 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
       })
       .then(response => {
         console.log(response);
+         const channel = response.result.items[0];
+
+        const output = `
+        <ul class="collection">
+          <li class="collection-item">Title: ${channel.snippet.title}</li>
+          <li class="collection-item">ID: ${channel.id}</li>
+          <li class="collection-item">Subscribers: ${channel.statistics.subscriberCount}</li>
+          <li class="collection-item">Views: ${channel.statistics.viewCount}</li>
+          <li class="collection-item">Videos: ${channel.statistics.videoCount}
+          </ul>
+          <p>${channel.snippet.dexcription}</p>
+          <a class="btn btn-danger" target="-blank" href="https://youtube.com/${channel.snippet.customUrl}">Visit Channel</a>
+          `;
+          showChannelData(output);
       })
       .catch(err => alert('No Channel by that name'))
     }
