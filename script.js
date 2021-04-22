@@ -154,7 +154,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
           output += `
           <div class="col-12">
-                    <article>
+                    <article data-key="${videoId}">
                   <img src="${thumbnails}" alt="image">  
                     <p>${description}</p>
                     </article>
