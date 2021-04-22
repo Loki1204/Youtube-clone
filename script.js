@@ -141,13 +141,13 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
       const playListItems = response.result.items;
       if(playListItems){
-        const videoId = item.snippet.resourceId.videoId;
         
-        let output  = `<br><h4 style="text-align: center;">Latest Vidoes</h4> <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" 
+        
+        let output  = `<br><h4 style="text-align: center;">Latest Vidoes</h4> <iframe width="560" height="315" src="https://www.youtube.com/embed/${items[0].snippet.resourceId.videoId}" title="YouTube video player" frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-player"></iframe>`;
 
         playListItems.forEach(item =>{
-          
+          const videoId = item.snippet.resourceId.videoId;
 
           output += `
           <div class="col-12">
@@ -158,8 +158,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
         })
 
-        videoContainer.innerHTML = ''
-          + '<div class="row"></div>' + output;
+        videoContainer.innerHTML = '<div class="row"></div>' + output;
       }else{
         videoContainer.innerHTML = 'No uploaded Videos'
       }
