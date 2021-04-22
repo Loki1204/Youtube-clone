@@ -146,7 +146,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           const videoId = item.snippet.resourceId.videoId;
 
           output += `
-          <div class="col-6">
+          <div class="col-12">
           <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe>
           </div>
