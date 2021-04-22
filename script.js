@@ -58,7 +58,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           $('#sign-in-or-out-button').html('Sign out');
           $('#revoke-access-button').css('display', 'inline-block');
           videoPlayer.style.display = 'block';
-          videoContainer.style.display = 'flex';
+          videoContainer.style.display = 'inline-flex';
           channelData.style.display = 'block';
           channelForm.style.display = 'block';
 
