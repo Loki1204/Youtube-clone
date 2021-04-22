@@ -153,7 +153,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           const videoId = item.snippet.resourceId.videoId;
 
           output += `
-          <div class="col-12">
+          <div class="col-12" id="playlist">
                   <img src="${thumbnails}" alt="image">  
                     <p>${description}
           </div>
