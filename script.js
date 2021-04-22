@@ -112,7 +112,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           </ul>
           <p>${channel.snippet.description}</p>
           <a class="btn btn-danger" target="-blank" href="https://youtube.com/channel/${channel.id}">Visit Channel</a>
-          <button class="btn btn-danger">Subscribe</button>`;
+          <button class="btn btn-danger" onclick = ${subscribe()}>Subscribe</button>`;
           showChannelData(output);
 
           const playlistId = channel.contentDetails.relatedPlaylists.uploads;
@@ -124,6 +124,27 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
     function numberWithCommas(x) {
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
+    
+function subscribe(){
+      return gapi.client.youtube.subscriptions.insert({
+        "part": [
+          "snippet"
+        ],
+        "resource": {
+          "snippet": {
+            "resourceId": {
+              "kind": "youtube#channel",
+              "channelId": channel.id
+            }
+          }
+        }
+      })
+          .then(response => {
+            console.log(response);
+          })
+            .catch(err => alert('error'))
+    
+    }
 
 
   function requestVideoPlaylist(playlistId){
