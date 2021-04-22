@@ -154,7 +154,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
           output += `
           <div class="col-12">
-                    <article data-key="${videoId}">
+                    <article id="vidlist" data-key="${videoId}">
                   <img src="${thumbnails}" alt="image">  
                     <p>${description}</p>
                     </article>
@@ -162,9 +162,12 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
          `;
 
         })
+
+        let article = document.getElementById('vidlist')
         article.addEventListener('click', ev=>{
           let id = $(this).attr('data-key');
         })
+        
         videoContainer.innerHTML = '<div class="row"></div>' + output;
       }else{
         videoContainer.innerHTML = 'No uploaded Videos'
