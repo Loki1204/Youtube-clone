@@ -165,8 +165,8 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
         let article = document.getElementsByTagName('article')
         let eventListener = function(){console.log('clicked an articles')}
-        for(var i=0; i<articles.length; i++){
-          articles[i].addEventListener('click', eventListener );
+        for(var i=0; i<article.length; i++){
+          article[i].addEventListener('click', eventListener );
       }
       
 
