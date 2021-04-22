@@ -58,7 +58,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           $('#sign-in-or-out-button').html('Sign out');
           $('#revoke-access-button').css('display', 'inline-block');
           videoPlayer.style.display = 'block';
-          videoContainer.style.display = 'inline-flex';
+          videoContainer.style.display = 'block';
           channelData.style.display = 'block';
           channelForm.style.display = 'block';
 
@@ -141,10 +141,13 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
       const playListItems = response.result.items;
       if(playListItems){
-        let output  = '<br><h4 style="text-align: center;">Latest Vidoes</h4>';
+        const videoId = item.snippet.resourceId.videoId;
+        
+        let output  = `<br><h4 style="text-align: center;">Latest Vidoes</h4> <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-player"></iframe>`;
 
         playListItems.forEach(item =>{
-          const videoId = item.snippet.resourceId.videoId;
+          
 
           output += `
           <div class="col-12">
@@ -155,7 +158,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
         })
 
-        videoContainer.innerHTML = '<iframe width="560" height="315" src="https://www.youtube.com/embed/" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-player"></iframe>'
+        videoContainer.innerHTML = ''
           + '<div class="row"></div>' + output;
       }else{
         videoContainer.innerHTML = 'No uploaded Videos'
