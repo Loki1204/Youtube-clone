@@ -146,7 +146,8 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
         playListItems.forEach(item =>{
           const videoId = item.snippet.resourceId.videoId;
 
-          output += `
+          output += `<iframe width="560" height="315" src="https://www.youtube.com/embed/r-yxNNO1EI8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-player"></iframe>
+          <div class="row">
           <div class="col-12">
           <iframe width="210" height="118" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe>
