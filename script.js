@@ -154,7 +154,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
         })
 
-        videoContainer.innerHTML = output;
+        videoContainer.innerHTML = output.join();
       }else{
         videoContainer.innerHTML = 'No uploaded Videos'
       }
