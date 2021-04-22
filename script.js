@@ -149,7 +149,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
         playListItems.forEach(item =>{
           const thumbnails = item.snippet.thumbnails.default.url;
-          const description = item.snippet.description.substring(0, 200);
+          const description = item.snippet.description.substring(0, 100);
           const videoId = item.snippet.resourceId.videoId;
 
           output += `
