@@ -149,18 +149,23 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
         playListItems.forEach(item =>{
           const thumbnails = item.snippet.thumbnails.default.url;
-          const description = item.snippet.description.substring(0, 100);
+          const description = item.snippet.description.substring(0, 200);
           const videoId = item.snippet.resourceId.videoId;
 
           output += `
-          <div class="col-12" id="playlist">
-                  <img src="${thumbnails}" alt="image">  
-                    <p>${description}
+          <div class="col-12">
+                  <article class="vidItem" data-key="${videoId}"
+                  <img class="thumb" src="${thumbnails}" alt="image">  
+                    <p>${description}</p>
+                    </article>
           </div>
          `;
 
         })
+        // let playlist = document.getElementById('playlist');
+        // playlist.addEventListener('click', ev => {
 
+        // })
         videoContainer.innerHTML = '<div class="row"></div>' + output;
       }else{
         videoContainer.innerHTML = 'No uploaded Videos'
