@@ -125,26 +125,26 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
       return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   }
     
-function subscribe(){
-      return gapi.client.youtube.subscriptions.insert({
-        "part": [
-          "snippet"
-        ],
-        "resource": {
-          "snippet": {
-            "resourceId": {
-              "kind": "youtube#channel",
-              "channelId": channel.id
-            }
-          }
-        }
-      })
-          .then(response => {
-            console.log(response);
-          })
-            .catch(err => alert('error'))
+// function subscribe(){
+//       return gapi.client.youtube.subscriptions.insert({
+//         "part": [
+//           "snippet"
+//         ],
+//         "resource": {
+//           "snippet": {
+//             "resourceId": {
+//               "kind": "youtube#channel",
+//               "channelId": channel.id
+//             }
+//           }
+//         }
+//       })
+//           .then(response => {
+//             console.log(response);
+//           })
+//             .catch(err => alert('error'))
     
-    }
+//     }
 
 
   function requestVideoPlaylist(playlistId){
