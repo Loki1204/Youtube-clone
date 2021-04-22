@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#"><img src="youtube logo.png" alt="youtube-logo" class="youtube-logo"></a>
@@ -35,6 +36,9 @@
             <input type="text" placeholder="Enter Channel name" id="channel-input"><br>
             <input type="submit" value="Get Channel data" class="btn btn-secondary">
           </form>
+          <div class="row">
+            <div class="col-12" id="channel-data"></div>
+          </div>
           </div>
           <div class="col-6">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/r-yxNNO1EI8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-player"></iframe>
@@ -45,13 +49,10 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-6" id="channel-data"></div>
-          <div class="col-6" id="video-container"></div>
+          <div class="col-12" id="video-container"></div>
 
         </div>
       </div>
-
-
 
 
 
