@@ -1,6 +1,7 @@
 const mainContainer = document.getElementById('main-container');
 const channelInput = document.getElementById('channel-input');
 const channelForm = document.getElementById('channel-form');
+const channelData = document.getElementById('channel-data');
 const videoPlayer = document.getElementById('video-player');
 const videoContainer = document.getElementById('video-container');
 
