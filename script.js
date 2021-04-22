@@ -153,22 +153,24 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           const videoId = item.snippet.resourceId.videoId;
 
           output += `
-          <div class="col-12">
+          
                     <article id="vidlist" data-key="${videoId}">
                   <img src="${thumbnails}" alt="image">  
                     <p>${description}</p>
                     </article>
-          </div>
+          
          `;
 
         })
 
-        let article = document.getElementById('vidlist')
-        article.addEventListener('click', ev=>{
-          let id = $(this).attr('data-key');
-        })
-        
-        videoContainer.innerHTML = '<div class="row"></div>' + output;
+        let article = document.getElementsByTagName('article')
+        let eventListener = function(){console.log('clicked an articles')}
+        for(var i=0; i<articles.length; i++){
+          articles[i].addEventListener('click', eventListener );
+      }
+      
+
+        videoContainer.innerHTML =  output;
       }else{
         videoContainer.innerHTML = 'No uploaded Videos'
       }
