@@ -153,8 +153,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
           output += `
           <div class="col-12">
-          <iframe width="210" height="118" src="https://www.youtube.com/embed/${thumbnails}" title="YouTube video player" frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe>
+          thumbnails
           </div>
          `;
 
