@@ -110,7 +110,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
             numberWithCommas(channel.statistics.viewCount)}</li>
           <li class="collection-item">Videos: ${numberWithCommas(channel.statistics.videoCount)}
           </ul>
-          <p>${channel.snippet.dexcription}</p>
+          <p>${channel.snippet.description}</p>
           <a class="btn btn-danger" target="-blank" href="https://youtube.com/channel/${channel.id}">Visit Channel</a>
           `;
           showChannelData(output);
