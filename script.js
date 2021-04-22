@@ -153,7 +153,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
           output += `
           <div class="col-12">
-            ${thumbnails}
+                  <img src="${thumbnails}" alt="image">  
           </div>
          `;
 
