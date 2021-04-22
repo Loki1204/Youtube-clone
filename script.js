@@ -142,8 +142,8 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
       const playListItems = response.result.items;
       if(playListItems){
         
-        
-        let output  = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${playListItems[0].snippet.resourceId.videoId}" title="YouTube video player" frameborder="0" 
+        let id = playListItems[0].snippet.resourceId.videoId
+        let output  = `<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-player"></iframe>
                           <br><h4 style="text-align: center;">Latest Vidoes</h4> `;
 
@@ -162,10 +162,9 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
          `;
 
         })
-        // let playlist = document.getElementById('playlist');
-        // playlist.addEventListener('click', ev => {
-
-        // })
+        article.addEventListener('click', ev=>{
+          let id = $(this).attr('data-key');
+        })
         videoContainer.innerHTML = '<div class="row"></div>' + output;
       }else{
         videoContainer.innerHTML = 'No uploaded Videos'
