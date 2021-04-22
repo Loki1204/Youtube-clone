@@ -110,7 +110,7 @@ function showChannelData(data){
           <li class="collection-item">Videos: ${channel.statistics.videoCount}
           </ul>
           <p>${channel.snippet.description}</p>
-          <a class="btn btn-danger" target="-blank" href="https://youtube.com/${channel.snippet.customUrl}">Visit Channel</a>
+          <a class="btn btn-danger" target="-blank" href="https://youtube.com/channel/${channel.id}">Visit Channel</a>
           `;
           showChannelData(output);
       })
