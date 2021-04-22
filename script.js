@@ -58,7 +58,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           $('#sign-in-or-out-button').html('Sign out');
           $('#revoke-access-button').css('display', 'inline-block');
           videoPlayer.style.display = 'block';
-//           videoContainer.style.display = 'block';
+          videoContainer.style.display = 'block';
           channelData.style.display = 'block';
           channelForm.style.display = 'block';
 
@@ -67,7 +67,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
           $('#sign-in-or-out-button').html('Sign In/Authorize');
           $('#revoke-access-button').css('display', 'none');
           videoPlayer.style.display = 'none';
-//           videoContainer.style.display = 'none';
+          videoContainer.style.display = 'none';
           channelData.style.display = 'none';
           channelForm.style.display = 'none';
         }
@@ -137,5 +137,26 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
     request.execute(response =>{
       console.log(response);
+
+      const playListItems = response.result.items;
+      if(playlistItems){
+        let output  = '<br><h4 style="text-align: center;">Latest Vidoes</h4>';
+
+        playlistItems.forEach(item =>{
+          const videoId = item.snippet.resourceId.videoId;
+
+          output += `
+          <div class="col-6">
+          <iframe width="100%" height="auto" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen"></iframe>
+          </div>
+         `;
+
+        })
+
+        videoContainer.innerHTML = output;
+      }else{
+        videoContainer.innerHTML = 'No uploaded Videos'
+      }
     })
   }
