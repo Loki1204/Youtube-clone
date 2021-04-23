@@ -190,12 +190,12 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
       console.log(subscribedChannels)
 
       const subscriptionsContainer = document.getElementById('subscriptions-container')
-
+      let result = '';
       subscribedChannels.forEach(subscribe => {
         const channelName = subscribe.snippet.title;
         const channelId = subscribe.snippet.resourceId.channelId;
 
-        let result = `<div class="list-group">
+        result += `<div class="list-group">
         <a href="https://www.youtube.com/channel/${channelId}" class="list-group-item list-group-item-action active" aria-current="true">
         ${channelName}</a>`;
       })
