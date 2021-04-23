@@ -183,8 +183,9 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
       mine: 'true'
     })
     .then(response => {
-      console.log(response)
       
+      let subscribedChannels = response.result.items
+      console.log(subscribedChannels)
     })
   }
    
