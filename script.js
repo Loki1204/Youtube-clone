@@ -4,6 +4,7 @@ const channelForm = document.getElementById('channel-form');
 const channelData = document.getElementById('channel-data');
 const videoPlayer = document.getElementById('video-player');
 const videoContainer = document.getElementById('video-container');
+const subscriptions = document.getElementById('subscriptions')
 
 
 
@@ -57,19 +58,21 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
         if (isAuthorized) {
           $('#sign-in-or-out-button').html('Sign out');
           $('#revoke-access-button').css('display', 'inline-block');
-//           videoPlayer.style.display = 'block';
+          // videoPlayer.style.display = 'block';
           videoContainer.style.display = 'block';
           channelData.style.display = 'block';
           channelForm.style.display = 'block';
+          subscriptions.style.display = 'block'
 
 
         } else {
           $('#sign-in-or-out-button').html('Sign In/Authorize');
           $('#revoke-access-button').css('display', 'none');
-//           videoPlayer.style.display = 'none';
+          // videoPlayer.style.display = 'none';
           videoContainer.style.display = 'none';
           channelData.style.display = 'none';
           channelForm.style.display = 'none';
+          subscriptions.style.display = 'block'
         }
         
       }
@@ -163,13 +166,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
         })
 
-         let vidlist = document.getElementsByTagName('article')
-        vidlist.onclick = function(){
-          alert('heloo clicked')
-        }
-      
-      
-  
+        
 
         videoContainer.innerHTML =  output;
       }else{
@@ -177,3 +174,16 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
       }
     })
   }
+
+
+
+  subscriptions.onclick = function(){
+    gapi.client.youtube.subscriptions.list({
+      part: 'contentDetails,id,snippet,subscriberSnippet',
+      channelId: 'UCCi5MIIlM278V4bBirel7Cg';
+    })
+    .then(response => {
+      console.log(response)
+    })
+  }
+   
