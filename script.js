@@ -182,7 +182,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
     gapi.client.youtube.subscriptions.list({
       part: 'snippet',
       mine: 'true',
-      maxResults: '50'
+      maxResults: 50
     })
     .then(response => {
       
