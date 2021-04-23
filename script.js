@@ -187,7 +187,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
       
       let subscribedChannels = response.result.items
       
-      console.log(subscribedChannels)
+      console.log(response)
 
       const subscriptionsContainer = document.getElementById('subscriptions-container')
       let result = '';
@@ -196,7 +196,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
         const channelId = subscribe.snippet.resourceId.channelId;
 
         result += `<div class="list-group">
-        <a href="https://www.youtube.com/channel/${channelId}" class="list-group-item list-group-item-action active" aria-current="true">
+        <a href="https://www.youtube.com/channel/${channelId}" target="_blank" class="list-group-item list-group-item-action" aria-current="true">
         ${channelName}</a>`;
       })
 
