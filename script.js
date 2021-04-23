@@ -191,16 +191,16 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
       const subscriptionsContainer = document.getElementById('subscriptions-container')
 
+      subscribedChannels.forEach(subscribe => {
+        const channelName = item.snippet.title;
+        const channelId = item.snippet.resourceId.channelId;
 
-      subscriptionsContainer.innerHTML = `<div class="list-group">
-  <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-    The current link item
-  </a>
-  <a href="#" class="list-group-item list-group-item-action">A second link item</a>
-  <a href="#" class="list-group-item list-group-item-action">A third link item</a>
-  <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
-  <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">A disabled link item</a>
-</div>`
+        let result = `<div class="list-group">
+        <a href="https://www.youtube.com/channel/${channelId}" class="list-group-item list-group-item-action active" aria-current="true">
+        ${channelName}</a>`;
+      })
+
+      subscriptionsContainer.innerHTML = result;
     })
   }
    
