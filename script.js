@@ -189,6 +189,9 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
       
       console.log(subscribedChannels)
 
+      const subscriptionsContainer = document.getElementById('subscriptions-container')
+
+
       subscriptionsContainer.innerHTML = `<div class="list-group">
   <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
     The current link item
