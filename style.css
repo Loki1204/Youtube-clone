@@ -1,6 +1,4 @@
-body{
-	background-color: black;
-}
+
 
 .youtube-logo{
     height: 20px;
@@ -10,7 +8,7 @@ article{
     display: flex;
 	align-items: center;
 	padding: 8px 12px;
-	border: 1px solid white;
+	border: 1px solid black;
 	border-radius: 8px;
 	margin: 0 auto;
 }
