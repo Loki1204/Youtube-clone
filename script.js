@@ -4,7 +4,8 @@ const channelForm = document.getElementById('channel-form');
 const channelData = document.getElementById('channel-data');
 const videoPlayer = document.getElementById('video-player');
 const videoContainer = document.getElementById('video-container');
-const subscriptions = document.getElementById('subscriptions')
+const subscriptions = document.getElementById('subscriptions');
+const subscriptionsContainer = document.getElementById('subscriptions-container')
 
 
 
@@ -188,7 +189,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
       
       console.log(subscribedChannels)
 
-      subscriptions.innerHTML = `<div class="list-group">
+      subscriptionsContainer.innerHTML = `<div class="list-group">
   <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
     The current link item
   </a>
