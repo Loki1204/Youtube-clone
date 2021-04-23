@@ -57,7 +57,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
         if (isAuthorized) {
           $('#sign-in-or-out-button').html('Sign out');
           $('#revoke-access-button').css('display', 'inline-block');
-          videoPlayer.style.display = 'block';
+//           videoPlayer.style.display = 'block';
           videoContainer.style.display = 'block';
           channelData.style.display = 'block';
           channelForm.style.display = 'block';
@@ -66,7 +66,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
         } else {
           $('#sign-in-or-out-button').html('Sign In/Authorize');
           $('#revoke-access-button').css('display', 'none');
-          videoPlayer.style.display = 'none';
+//           videoPlayer.style.display = 'none';
           videoContainer.style.display = 'none';
           channelData.style.display = 'none';
           channelForm.style.display = 'none';
