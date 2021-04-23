@@ -179,11 +179,12 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
   subscriptions.onclick = function(){
     gapi.client.youtube.subscriptions.list({
-      part: 'contentDetails,id,snippet,subscriberSnippet',
-      channelId: 'UCCi5MIIlM278V4bBirel7Cg'
+      part: 'snippet,subscriberSnippet',
+      mine: 'true'
     })
     .then(response => {
       console.log(response)
+      
     })
   }
    
