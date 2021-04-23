@@ -179,7 +179,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
   subscriptions.onclick = function(){
     gapi.client.youtube.subscriptions.list({
-      part: 'snippet,subscriberSnippet',
+      part: 'snippet',
       mine: 'true'
     })
     .then(response => {
