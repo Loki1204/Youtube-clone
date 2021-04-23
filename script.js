@@ -167,6 +167,13 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
 
         })
 
+        const videoPlayer = document.getElementById('video-player'); 
+        let article = document.getElementsByTagName('article');
+        article.addEventListener('click', eve=>{
+          alert('hello world')
+        })
+
+
         
 
         videoContainer.innerHTML =  output;
