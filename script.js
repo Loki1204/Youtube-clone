@@ -170,9 +170,10 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
         const videoPlayer = document.getElementById('video-player'); 
         let article = document.getElementsByTagName('article');
         console.log(article)
-        article.addEventListener('click', eve=>{
-         console.log(article)
-        })
+        article.addEventListener('click', function(eve) {
+          console.log(article)
+        }         
+        )
 
 
         
