@@ -162,6 +162,8 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
                   <img src="${thumbnails}" alt="image">  
                     <p>${description}</p>
                     </article>
+let videoList = document.getElementById('videoList');
+        console.log(videoList);
           
          `;
 
