@@ -170,8 +170,8 @@ let videoList = document.getElementById('videoList');
         })
 
         const videoPlayer = document.getElementById('video-player'); 
-        let videoList = document.getElementById('videoList');
-        console.log(videoList);
+//         let videoList = document.getElementById('videoList');
+//         console.log(videoList);
 
 
         
