@@ -168,7 +168,7 @@ var SCOPE = 'https://www.googleapis.com/auth/youtube https://www.googleapis.com/
         })
 
         const videoPlayer = document.getElementById('video-player'); 
-        let videoList = ocument.getElementById('videoList');
+        let videoList = document.getElementById('videoList');
         console.log(videoList);
 
 
