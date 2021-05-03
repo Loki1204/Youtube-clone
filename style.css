@@ -1,17 +1,25 @@
-.youtube-logo{
-    height: 20px;
+.youtube-logo {
+  height: 20px;
 }
 
-article{
-    display: flex;
-	align-items: center;
-	padding: 8px 12px;
-	border: 1px solid black;
-	border-radius: 8px;
-	margin: 0 auto;
+nav {
+  position: sticky;
+}
+
+article {
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin: 0 auto;
 }
 
 .thumb {
-	height: 70px;
-	border-radius: 4px;
+  height: 70px;
+  border-radius: 4px;
+}
+
+.details {
+  padding: 8px 22px;
 }
