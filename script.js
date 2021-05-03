@@ -150,10 +150,11 @@ function requestVideoPlaylist(playlistId) {
     let playlist = "";
     mainVid(id);
     resultsLoop(playListItems);
-
+    
     function mainVid(id) {
       videoplayer += `<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" 
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-player"></iframe>`;
+                      
     }
 
     function resultsLoop(playListItems) {
@@ -181,13 +182,20 @@ function requestVideoPlaylist(playlistId) {
     videoList.innerHTML = playlist;
     console.log(videoList);
 
-    videoList.addEventListener("click", () => {
-      playListItems.forEach((item) => {
-        let id = item.snippet.resourceId.videoId;
-        mainVid(id);
-        alert(id);
-      });
-    });
+    let article = document.getElementsByTagName('article')
+    console.log(article)
+
+    
+
+    for (let i = 0; i < article.length; i++) {
+     article[i].onclick = () => {
+       console.log(article[i].dataset.key)
+       mainVid(article[i].dataset.key)
+     }      
+    }
+
+    
+    
   });
 }
 
