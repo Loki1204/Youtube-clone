@@ -99,7 +99,6 @@ function getChannel(channel) {
       forUsername: channel,
     })
     .then((response) => {
-      console.log(response);
       const channel = response.result.items[0];
 
       const output = `
@@ -143,18 +142,16 @@ function requestVideoPlaylist(playlistId) {
   const request = gapi.client.youtube.playlistItems.list(requestOptions);
 
   request.execute((response) => {
-    console.log(response);
     const playListItems = response.result.items;
     let id = playListItems[0].snippet.resourceId.videoId;
     let videoplayer = "";
     let playlist = "";
     mainVid(id);
     resultsLoop(playListItems);
-    
+
     function mainVid(id) {
       videoplayer += `<iframe width="560" height="315" src="https://www.youtube.com/embed/${id}" title="YouTube video player" frameborder="0" 
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen id="video-player"></iframe>`;
-                      
     }
 
     function resultsLoop(playListItems) {
@@ -177,25 +174,17 @@ function requestVideoPlaylist(playlistId) {
     }
 
     videoContainer.innerHTML = videoplayer;
-    console.log(videoContainer);
 
     videoList.innerHTML = playlist;
-    console.log(videoList);
 
-    let article = document.getElementsByTagName('article')
-    console.log(article)
-
-    
+    let article = document.getElementsByTagName("article");
 
     for (let i = 0; i < article.length; i++) {
-     article[i].onclick = () => {
-       console.log(article[i].dataset.key)
-       mainVid(article[i].dataset.key)
-     }      
+      article[i].onclick = () => {
+        console.log(article[i].dataset.key);
+        mainVid(article[i].dataset.key);
+      };
     }
-
-    
-    
   });
 }
 
@@ -208,8 +197,6 @@ subscriptions.onclick = function () {
     })
     .then((response) => {
       let subscribedChannels = response.result.items;
-
-      console.log(response);
 
       const subscriptionsContainer = document.getElementById(
         "subscriptions-container"
