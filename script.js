@@ -192,7 +192,7 @@ subscriptions.onclick = function () {
     .list({
       part: "snippet",
       mine: "true",
-      maxResults: 10,
+      maxResults: 50,
     })
     .then((response) => {
       let subscribedChannels = response.result.items;
