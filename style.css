@@ -34,3 +34,9 @@ article:hover {
 .details {
   padding: 8px 22px;
 }
+
+#subscriptions-container {
+  width: auto;
+  height: 300px;
+  overflow-y: scroll;
+}
