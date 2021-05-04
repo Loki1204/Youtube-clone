@@ -121,7 +121,7 @@ function getChannel(channel) {
           <a class="btn btn-danger" target="-blank" href="https://youtube.com/channel/${
             channel.id
           }">Visit Channel</a>
-          <button class="btn btn-danger">Subscribe</button>`;
+         `;
       showChannelData(output);
 
       const playlistId = channel.contentDetails.relatedPlaylists.uploads;
