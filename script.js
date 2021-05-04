@@ -73,7 +73,7 @@ function initClient() {
       videoContainer.style.display = "none";
       channelData.style.display = "none";
       channelForm.style.display = "none";
-      subscriptions.style.display = "block";
+      subscriptions.style.display = "none";
       videoList.style.display = "none";
     }
   }
