@@ -10,9 +10,21 @@ article {
   display: flex;
   align-items: center;
   padding: 8px 12px;
-  border: 1px solid black;
   border-radius: 8px;
   margin: 0 auto;
+}
+
+article:hover {
+  background: #cdfeaa;
+}
+
+#videoList {
+  border: 1px solid black;
+  width: auto;
+  height: 400px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-y: scroll;
 }
 
 .thumb {
